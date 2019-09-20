@@ -25,4 +25,11 @@ func TestDecodeJSON(t *testing.T) {
 	// here we pass the string reader and the memory address (pointer) of someObject
 	err := decodeJSON(someJSON, &someObject)
 	assert.NoError(t, err)
+
+	expectedObj := testObject{
+		ID:   "webnesday",
+		Text: "webnesday is awsome!",
+	}
+
+	assert.Equal(t, expectedObj, someObject)
 }
